@@ -50,7 +50,7 @@ public class KernelKMeans {
     {
         HashMap<String, Integer> labels = new HashMap<String, Integer>();
         for(String key : keys)
-            labels.put(key, key.hashCode() % nClusters);
+            labels.put(key, Math.abs(key.hashCode()) % nClusters);
 
         return labels;
     }
